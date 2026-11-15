@@ -26,10 +26,12 @@ jobs:
       - run: flutter analyze
       - run: flutter test
 
-      # Debug-signed APK: installable on any phone with "install unknown apps".
-      - run: flutter build apk --debug
+      # Release build (fast, what users would get). Until a real keystore is
+      # configured it is signed with the debug key, so it installs on any
+      # phone that allows "install unknown apps".
+      - run: flutter build apk --release
 
       - uses: actions/upload-artifact@v4
         with:
-          name: pfl-lol-debug-apk
-          path: build/app/outputs/flutter-apk/app-debug.apk
+          name: pfl-lol-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
