@@ -53,7 +53,7 @@ flutter build apk      # build/app/outputs/flutter-apk/app-release.apk
 ```
 
 Every push runs `.github/workflows/build.yml`, which analyzes and tests the code, builds a
-release APK (signed with the debug key) and attaches it to the run as the `pfl-lol-apk` artifact.
+release APK (signed with the debug key) and attaches it to the run as the `pfl-lol-apk` artifact. Pushes also publish it as a pre-release under **Releases** (`pfl-lol.apk`) for direct download on a phone.
 
 ## Known simplifications
 
